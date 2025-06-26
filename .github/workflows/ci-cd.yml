@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
+      - run: go mod download
       - run: go vet ./...
       - run: go test ./...
 
@@ -37,3 +38,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/parcel-tracker:${{ github.ref_name }}
+
