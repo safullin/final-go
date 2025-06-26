@@ -1,4 +1,4 @@
-name: CI/CD
+name: ci-cd
 
 on:
   push:
@@ -38,4 +38,3 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/parcel-tracker:${{ github.ref_name }}
-
